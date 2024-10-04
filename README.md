@@ -8,19 +8,16 @@
 
 </details>
 <br>
-<br>
 
 ### 2. 이메일 확인 및 링크 클릭
 - 사용자가 인증 이메일을 확인하기 위해 새 창이나 탭을 열게 됨.
 - 해당 이메일에서 인증 요청 링크를 클릭함.
-<br>
 <br>
 
 ### 3. 프론트엔드 URL 이동
 - 클릭한 링크는 프론트엔드 애플리케이션의 특정 URL로 이동함.
 - 이 URL은 /sign-up/email?token=${token}임.
 이때, token은 서버에서 발송된 이메일의 링크에 포함된 값임.
-<br>
 <br>
 
 ### 4. URLSearchParams로 token 추출
@@ -30,11 +27,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 ```
 <br>
-<br>
 
 ### 5. GET 요청 보내기
 - 추출한 token이 있는 경우, /auth/sign-up/email-verification?token=${token}으로 GET 요청을  보냄.
-<br>
 <br>
 
 #### 6. 요청 처리 및 리다이렉션
